@@ -103,3 +103,16 @@ jobs:
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
             args: --all-features
+
+  benchmarks:
+    name: Run criterion.rs benchmarks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - uses: jsqu4re/criterion-compare-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
