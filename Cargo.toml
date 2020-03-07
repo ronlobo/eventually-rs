@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "eventually",
+    "eventually-cache",
     "eventually-core",
     "eventually-memory",
     "eventually-util",
